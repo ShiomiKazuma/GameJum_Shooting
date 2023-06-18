@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5608334307592882911}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8962264, g: 0.09638655, b: 0.09638655, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5f28b9a8adc78ff4089ed2becf690f69, type: 3}
+  m_Color: {r: 0.9433962, g: 0.9202563, b: 0.9202563, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12508a68ed26b344fb0822db4e751075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.05
+  speed: -0.03
   shot_interval: 1
-  enemy_bullet: {fileID: 0}
+  enemy_bullet: {fileID: 8264230754373731509, guid: 3d147e93b066b6345ad2c263a654371f, type: 3}
 --- !u!50 &5608334307592882896
 Rigidbody2D:
   serializedVersion: 4
@@ -134,14 +134,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 6.24, y: 6.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

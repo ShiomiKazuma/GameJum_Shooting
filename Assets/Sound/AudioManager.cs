@@ -58,9 +58,7 @@ public class AudioManager : MonoBehaviour
     {
         public enum BGM
         {
-            Title,
             Game,
-            Result,
         }
 
         public BGM _bgm;
@@ -74,11 +72,9 @@ public class AudioManager : MonoBehaviour
     {
         public enum SE
         {
-            Start,
-            CountDown,
-            End,
-            ClickButton,
-            ChangeScene
+            Shot,
+            Ennemy,
+            Boss
         }
 
         public SE Se;

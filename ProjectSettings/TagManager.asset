@@ -7,6 +7,9 @@ TagManager:
   - up
   - down
   - gameout
+  - bullet
+  - player
+  - Enemy
   layers:
   - Default
   - TransparentFX

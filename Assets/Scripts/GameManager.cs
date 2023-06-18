@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.Instance.PlayBGM(AudioManager.BGMSoundData.BGM.Game);
+        
         //‰Šú‰»‚·‚é
         _targetscore = 0;
 
@@ -40,17 +42,18 @@ public class GameManager : MonoBehaviour
 
         if(_targetscore >= _targetgoal) 
         {
+            Debug.Log("Instance");
             _boss_frag = true;
         }
 
     }
 
-    private void OnDestroy()
+    public void EnemyDestory()
     {
         _targetscore = _targetscore + 1;
     }
 
-    void HitEnemy()
+    public void HitEnemy()
     {
         _playerhp = _playerhp - 1;
     }

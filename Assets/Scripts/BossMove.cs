@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossMove : MonoBehaviour
 {
@@ -55,7 +56,16 @@ public class BossMove : MonoBehaviour
         // HP‚ª0‚É‚È‚Á‚½‚çÁ‚·
         if (_hp <= 0)
         {
+            AudioManager.Instance.PlaySE(AudioManager.SESoundData.SE.Boss);
             Destroy(gameObject);
+            SceneManager.LoadScene("Clear");
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "bullet")
+        {
+            _hp = _hp - 1;
         }
     }
 }

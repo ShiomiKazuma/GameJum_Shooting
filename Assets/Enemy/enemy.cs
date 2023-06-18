@@ -17,6 +17,8 @@ public class enemy : MonoBehaviour
 
     private float enemy_shot_interval_count;
 
+    GameManager gamemanager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,8 @@ public class enemy : MonoBehaviour
         //var enemy = transform.position = new Vector3( 0, 0, 0);
 
         enemy_shot_interval_count = 0f;
+
+        gamemanager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -43,20 +47,22 @@ public class enemy : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "gameout")
         {
             BulletDestroy();
         }
 
-        if(collision.gameObject.tag == "bllet")
+        if(collision.gameObject.tag == "bullet")
         {
+            gamemanager.EnemyDestory();
             BulletDestroy();
         }
     }
     private void BulletDestroy()
     {
+        AudioManager.Instance.PlaySE(AudioManager.SESoundData.SE.Shot);
         Destroy(gameObject);
     }
 }
